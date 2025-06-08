@@ -16,9 +16,12 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
 
-#cls is the class variable name because if you used class it is actually a key word in Python that creates a class, so cls is used as the variable, similar to self for as instance variable, cls is the class variable
+#cls is the class variable name because if you used class it is actually 
+#a key word in Python that creates a class, so cls is used as the variable, 
+#similar to self for as instance variable, cls is the class variable
 
-# the @classmethod function can change attributes within the class such as if originally species = 'Canine' the @classmethod function could do this:
+# the @classmethod function can change attributes within the class such 
+#as if originally species = 'Canine' the @classmethod function could do this:
 
 # class Dog:
 #     species = "Canine"
@@ -29,20 +32,25 @@ class Employee:
 
 # Dog.change_species("Wolf")
 
-# print(Dog.species) aand this would change the species from Canine to Wolf as output
+# print(Dog.species) aand this would change the species from Canine to
+#Wolf as output
 
 
     @classmethod
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
 
-#Creates new Employee for any new employee rather than needing to change code for specific employees to make new ones
+#Creates new Employee for any new employee rather than needing to change 
+#code for specific employees to make new ones
     @classmethod
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
         return cls(first,last, pay)
 
-#Static methods dont take cls or self and you can just driectly put in the variable needed. It doesn't have access to class or self methods. It is a basic function within a class.
+#Static methods dont take cls or self and you can just driectly put in 
+#the variable needed. It doesn't have access to class or self methods. 
+#It is a basic function within a class.
+
 # The days of the week start with 0 as monday and go to 6 as saturday 
     @staticmethod
     def is_workday(day):
@@ -53,34 +61,11 @@ class Employee:
 emp_1 = Employee('Corey', 'Schafer', 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
-# imports datime module, makes new date, and checks if date is weekday, if is will result in true, if not with false
+# imports datime module, makes new date, and checks if date is weekday, 
+# if is will result in true, if not with false
 import datetime
 my_date = datetime.date(2025, 6, 9)
 print(Employee.is_workday(my_date))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # emp_str_1 = 'John-Doe-700000'
@@ -91,7 +76,10 @@ print(Employee.is_workday(my_date))
 # new_emp_1 = Employee.from_string(emp_str_1)
 
 
-#this takes the employee string 1 (emp_str_1) and deletes the '-' marks to get the first name, last name, and pay. It then creates a new emplyee with the new_emp_1 = Employee(first, last, pay) 
+#this takes the employee string 1 (emp_str_1) and deletes the '-' marks
+#to get the first name, last name, and pay. It then creates a new emplyee
+# with the new_emp_1 = Employee(first, last, pay) 
+
 # first, last, pay = emp_str_1.split('-')
 
 # new_emp_1 = Employee(first,last, pay)
@@ -104,7 +92,9 @@ print(Employee.is_workday(my_date))
 
 
 
-#Changes all raise amounts as explained before changes class amount from what was previously established
+#Changes all raise amounts as explained before changes class amount from 
+# what was previously established
+
 #Employee.set_raise_amt(1.05)
 
 # print(Employee.raise_amt)
